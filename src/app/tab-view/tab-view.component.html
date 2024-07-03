@@ -1,0 +1,13 @@
+<main class="main" style="display: flex;">
+  <div>
+    <p-tabView (onChange)="handleLog($event)">
+      <p-tabPanel *ngFor="let tab of listData" [header]="tab.title">
+        <app-colab [listColab]="tab.content" [activeIndices]="getDisabledIndices(tab.content)"></app-colab>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <div>
+    <p-button  (click)="openAll(idTab)">Mở tất cả</p-button>
+    <p-button  (click)="closeAll(idTab)">Đóng tất cả</p-button>
+  </div>
+</main>

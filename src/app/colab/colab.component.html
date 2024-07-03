@@ -1,0 +1,8 @@
+<main class="main">
+  {{activeIndices| json}}
+  <p-accordion [multiple]="true" [activeIndex]="activeIndices">
+    <p-accordionTab *ngFor="let colab of listColab; let i = index" [header]="colab.title">
+      <p class="m-0">{{ colab.content }}</p>
+    </p-accordionTab>
+  </p-accordion>
+</main>
